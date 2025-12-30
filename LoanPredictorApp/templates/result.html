@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        .result-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            color: #1e293b;
+        }
+
+        .approved {
+            color: #16a34a;
+            font-size: 26px;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .rejected {
+            color: #dc2626;
+            font-size: 26px;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-card">
+    <h2>Prediction Result</h2>
+
+    {% if "Approved" in prediction %}
+        <div class="approved">{{ prediction }}</div>
+    {% else %}
+        <div class="rejected">{{ prediction }}</div>
+    {% endif %}
+
+    <a href="/">Predict Again</a>
+</div>
+
+</body>
+</html>

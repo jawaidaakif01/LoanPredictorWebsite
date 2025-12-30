@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Approval Predictor</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px 35px;
+            width: 450px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #334155;
+            display: block;
+            margin-top: 12px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 9px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #cbd5f5;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: #4f46e5;
+        }
+
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79,70,229,0.4);
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Loan Approval Predictor</h2>
+
+    <form action="/predict" method="POST">
+
+        <label>Applicant Income</label>
+        <input type="number" name="ApplicantIncome" required>
+
+        <label>Coapplicant Income</label>
+        <input type="number" name="CoapplicantIncome" required>
+
+        <label>Loan Amount</label>
+        <input type="number" name="LoanAmount" required>
+
+        <label>Loan Amount Term</label>
+        <input type="number" name="Loan_Amount_Term" required>
+
+        <label>Credit History</label>
+        <select name="Credit_History">
+            <option value="1">Good</option>
+            <option value="0">Bad</option>
+        </select>
+
+        <label>Gender</label>
+        <select name="Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label>Married</label>
+        <select name="Married">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label>Education</label>
+        <select name="Education">
+            <option value="Graduate">Graduate</option>
+            <option value="Not Graduate">Not Graduate</option>
+        </select>
+
+        <label>Self Employed</label>
+        <select name="Self_Employed">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label>Property Area</label>
+        <select name="Property_Area">
+            <option value="Urban">Urban</option>
+            <option value="Semiurban">Semiurban</option>
+            <option value="Rural">Rural</option>
+        </select>
+
+        <label>Dependents</label>
+        <select name="Dependents">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3+">3+</option>
+        </select>
+
+        <button type="submit">Predict Loan Status</button>
+    </form>
+
+    <div class="footer">
+        ML Project • Loan Approval Prediction
+    </div>
+</div>
+
+</body>
+</html>
